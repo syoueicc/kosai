@@ -4,6 +4,12 @@
   "description": "A new package",
   "author": "A messed author <cancel.wu@foxmail.com>",
   "dependencies": {
+    "express" : "3.4.0",
+    "ejs" : "0.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cancelv5/kosai.git"
   },
   "engines": {
     "node": "0.10.x",

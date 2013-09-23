@@ -1,0 +1,57 @@
+
+html, body {
+	background-color: #272821;
+	margin: 0 auto;
+	padding: 0 auto;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.title {
+	color: #d7d7d7;
+	font: 200 60px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1;
+
+}
+.remark {
+	width: 100%;
+	color: #333;
+	text-align: right;
+	position: absolute;
+	bottom: 0px;
+	font: 100 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+.mainPlane {
+	width: 100%;
+	height:40%;
+	background-color: #a3d49c;
+	position: absolute;
+	border-radius:10px;
+	z-index: 99;
+	-webkit-box-shadow:5px 5px 10px 0px rgba(255,255,255,.5);
+	box-shadow:15px rgba(0,0,0,1);
+}
+
+.loginbox {
+	width: 60%;
+	height: 40%;
+	position: absolute;
+}
+
+.loginbox .login_line{
+	color: #333;
+	line-height: 2;
+	clear: both;
+}
+.loginbox .login_line .left{
+	float: left;
+}
+.loginbox .login_line .right{
+	float: right;
+}
+
+
+
+
