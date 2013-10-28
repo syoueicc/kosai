@@ -30,7 +30,7 @@ module.exports = function(app) {
 
 ///
 function router(req, res, next) {
-
+	console.log(req.params.controller + '---' + req.params.id);
 	var controller = req.params.controller ? req.params.controller : '';
 	var action = req.params.action ? req.params.action : '';
 	var id = req.params.id ? req.params.id : '';
@@ -44,45 +44,45 @@ function router(req, res, next) {
 	}		
 
 	// Determine the function to call based on controller / model and method
-	if(id.length == 0) {
+	// if(id.length == 0) {
 
-		// We are plural
-		switch(method) {
-			case 'get':
-				fn = 'index';
-				break;
-			case 'post':
-				fn = 'create';
-				break;
-			case 'delete':
-				fn = 'destroyAll';
-				break;		
-		}		
+	// 	// We are plural
+	// 	switch(method) {
+	// 		case 'get':
+	// 			fn = 'index';
+	// 			break;
+	// 		case 'post':
+	// 			fn = 'create';
+	// 			break;
+	// 		case 'delete':
+	// 			fn = 'destroyAll';
+	// 			break;		
+	// 	}		
 
-	} else {
-		switch(method) {
-			case 'get':
-				if(action.length > 0) {
-					fn = action;
-				} else {
-					fn = 'show';
-				}
-				break;
-			case 'put':
-				fn = 'update';
-				break;
-			case 'delete':
-				fn = 'destroy';
-				break;		
-		}		
+	// } else {
+	// 	switch(method) {
+	// 		case 'get':
+	// 			if(action.length > 0) {
+	// 				fn = action;
+	// 			} else {
+	// 				fn = 'show';
+	// 			}
+	// 			break;
+	// 		case 'put':
+	// 			fn = 'update';
+	// 			break;
+	// 		case 'delete':
+	// 			fn = 'destroy';
+	// 			break;		
+	// 	}		
 
-	}
+	// }
 	try {
 
 		var controllerLibrary = require('./' + controller + 'Controller');
-		consloe.log(typeof controllerLibrary[fn] === 'function');
-		if(typeof controllerLibrary[fn] === 'function') {
-			controllerLibrary[fn](req,res,next);		
+		console.log(typeof controllerLibrary[fn] === 'function');
+		if(typeof controllerLibrary === 'function') {
+			controllerLibrary(req,res,next);		
 		} else {
 			return res.render('404');
 		}	

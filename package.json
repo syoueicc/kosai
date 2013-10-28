@@ -5,7 +5,8 @@
   "author": "A messed author <cancel.wu@foxmail.com>",
   "dependencies": {
     "express" : "3.4.0",
-    "ejs" : "0.8.4"
+    "ejs" : "0.8.4",
+    "mongoskin" : "0.6.x"
   },
   "repository": {
     "type": "git",
