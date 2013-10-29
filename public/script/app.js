@@ -9,5 +9,7 @@ require.config({
 
 
 require(['jquery','less', 'bootstrap'],function($, less, bootstrap){
-	
+	$("#loginBtn").bind('click',function(){
+		$('#myModal').modal("show");
+	});
 });

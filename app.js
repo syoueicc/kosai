@@ -1,6 +1,5 @@
 var express = require('express')
 	//, app = express()
-	, _globle = require("./conf/GLOBLE")
 	, path = __dirname
 	, fs = require("fs")
 	, ejs = require("ejs");
@@ -11,7 +10,7 @@ exports.boot = function(params) {
 	app = express();	
 
 	// Import configuration
-	//require(path + '/conf/configuration.js')(app,express);
+	require(path + '/conf/configuration.js')(app,express);
   
 	// Bootstrap application
 	bootApplication(app);
@@ -28,7 +27,7 @@ function bootApplication(app){
 	app.use(express.methodOverride());
 	app.use(express.cookieParser());
 	app.use(express.session({ secret: 'kosai' }));
-	app.use("/static", express.static(path + _globle._GLOBLE_ARGS.PUBLIC_DIR));  // Before router to enable dynamic routing
+	app.use("/static", express.static(path + app.get("static-folder")));  // Before router to enable dynamic routing
 	app.use(function(req, res, next){
 		res.locals.user = req.session.user;
 		next();
@@ -57,6 +56,6 @@ function bootControllers(app) {
 }
 
 if (!module.parent) {
-  exports.boot().listen(_globle.port);
-  console.log("Express server %s listening on port %d", express.version, _globle.port);
+  exports.boot().listen(app.get("port"));
+  console.log("Express server %s listening on port %d", express.version, app.get("port"));
 }

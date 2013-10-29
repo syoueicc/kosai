@@ -1,5 +1,4 @@
-var fs = require('fs')
-	, _globle = require("../conf/GLOBLE");
+var fs = require('fs');
 	//, inflection = require('../lib/inflection');
 
 module.exports = function(app) {
@@ -30,7 +29,7 @@ module.exports = function(app) {
 
 ///
 function router(req, res, next) {
-	console.log(req.params.controller + '---' + req.params.id);
+	//console.log(req.params.controller + '---' + req.params.id);
 	var controller = req.params.controller ? req.params.controller : '';
 	var action = req.params.action ? req.params.action : '';
 	var id = req.params.id ? req.params.id : '';
@@ -80,7 +79,6 @@ function router(req, res, next) {
 	try {
 
 		var controllerLibrary = require('./' + controller + 'Controller');
-		console.log(typeof controllerLibrary[fn] === 'function');
 		if(typeof controllerLibrary === 'function') {
 			controllerLibrary(req,res,next);		
 		} else {
@@ -106,7 +104,7 @@ function index(req, res, next) {
 	 */
 	//res.redirect('/controllerName');
 
-	return res.render("app", _globle._GLOBLE_ARGS);
+	return res.render("app");
 
 
 };

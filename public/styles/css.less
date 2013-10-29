@@ -1,71 +1,10 @@
-@base-color : #4d4d4d;
-@base-width : 100%;
-@base-height : 100%;
-@base-padding : 0;
-@base-margin : 0;
-@panel-color : #ccc;
-@color : #1e2b33;
-@font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+@cancel_base-color : #565757;
+@cancel_color : #1e2b33;
+@cancel_font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+.base-background-color-cancel {
+	background-color: @cancel_base-color;
+}
 html {
-	background-color: @base-color;
-	color : @color;
-	width : @base-width;
-	height : @base-height;
-	padding : @base-padding;
-	margin : @base-margin;
-
-	body {
-		width : @base-width;
-		height : @base-height;
-		padding : @base-padding;
-		margin : @base-margin;
-		position: relative;
-	}
-	font-family : @font-family;
-}
-
-.border-radius (@radius: 5px) {
-  border-radius: @radius;
-  -moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-}
-
-.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
-  box-shadow: @arguments;
-  -moz-box-shadow: @arguments;
-  -webkit-box-shadow: @arguments;
-}
-
-.mainPlane {
-	position: absolute;
-	width:60%;
-	height:40%;
-	left : (@base-width - 60%)/2;
-	top : (@base-height - 40%)/2;
-	border:2px solid #ddd;
-	.border-radius(10px);
-	.box-shadow(3px,3px,3px,#ddd);
-	background-color:#b6d79e;
-
-	.loginbox {
-		position: absolute;
-		width:60%;
-		height:40%;
-		left : (@base-width - 60%)/2;
-		top : (@base-height - 40%)/2;
-
-		.login_line {
-			width:100%;
-			clear: both;
-			.left {
-				width : 80px;
-				float : left;
-			}
-
-			.right {
-				float : left;
-			}
-		}
-	}
+	.base-background-color-cancel
 }
