@@ -1,3 +1,8 @@
+/**
+ * /session post
+ */
+require("../models/db.js")();
+
 module.exports = function(req, res, next) {
 	//console.log(req.body.username + '---' + req.body.password);
 	var  user = req.body.username
