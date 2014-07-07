@@ -7,12 +7,13 @@ html, body {
 	height: 100%;
 	position: relative;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 .title {
 	color: #d7d7d7;
 	font: 200 60px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: 1;
-
+	position: absolute;
 }
 .remark {
 	width: 100%;
@@ -32,6 +33,8 @@ html, body {
 	z-index: 99;
 	-webkit-box-shadow:5px 5px 10px 0px rgba(255,255,255,.5);
 	box-shadow:15px rgba(0,0,0,1);
+
+
 }
 
 .loginbox {
